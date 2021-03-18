@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+span#inboxBtn {
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 3px;
+    background-color: #555;
+    display: inline-block;
+
+    position: relative; /* 숫자알림에 absolute를 걸기 위해서 부모요소인 이곳에 relative를 걸어서 시작점을 이곳으로 변경 원래 position: absolte의 시작점은 body요소임  */
+    /*    cursor: pointer; a요소는 포인터가 원래 적용되기 때문에 한번더 적을 필요 없음*/
+}
+
+span#inboxBtn:hover {
+    background-color: #fe0000;
+}
+
+span#inboxBtn::after {
+    content: "3";
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px; /* 숫자 중앙에 오도록 조절 */
+    border: 1px solid #fe0000;
+    border-radius: 12px; /* 정사각형의 길이가 24px이니깐 최소한 절반이상의 값을 지정해야 한다. */
+    background-color: #fe0000;
+    display: inline-block;
+
+    position: absolute;
+    right: -10px;
+    top: -10px;
+
+}
